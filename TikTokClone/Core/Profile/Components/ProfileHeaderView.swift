@@ -25,13 +25,23 @@ struct ProfileHeaderView: View {
             
             //stats View
             HStack(spacing: 16){
-                UserStatView(value: 200, title: "Following")
-                UserStatView(value: 300, title: "Followers")
-                UserStatView(value: 23033, title: "Likes")
-                
-               
+                UserStatview(value: 200, title: "Following")
+                UserStatview(value: 300, title: "Followers")
+                UserStatview(value: 23033, title: "Likes")
                 
             }
+            Button{
+                
+            }label: {
+                Text("Edit Profile")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .frame(width: 360, height: 32)
+                    .foregroundStyle(.black)
+                    .background(Color(.systemGray6))
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
+            }
+            Divider()
         }
     }
 }
@@ -40,19 +50,3 @@ struct ProfileHeaderView: View {
     ProfileHeaderView()
 }
 
-struct UserStatView: View {
-    let value: Int
-    let title: String
-    
-    var body: some View {
-        VStack{
-            Text("\(value)")
-                .font(.subheadline)
-                .fontWeight(.bold)
-            Text(title)
-                .font(.caption)
-                .foregroundStyle(.gray)
-        }
-        .frame(width: 80, alignment: .center)
-    }
-}
